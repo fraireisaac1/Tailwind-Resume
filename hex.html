@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Binary, Hex, and RGB Visualizer</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #1e1e1e;
+      color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2em;
+    }
+
+    h2 {
+      margin-top: 2em;
+      color: #8fd;
+    }
+
+    .hex-container {
+      display: flex;
+      gap: 1em;
+      margin: 1em 0;
+    }
+
+    .digit-column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0.5em;
+      background: #333;
+      border-radius: 0.5em;
+    }
+
+    .arrow {
+      cursor: pointer;
+      font-size: 1.5em;
+      user-select: none;
+    }
+
+    .hex-digit {
+      font-size: 2em;
+      margin: 0.2em 0;
+    }
+
+    .dec-value {
+      margin-top: 1em;
+      font-size: 1.2em;
+      color: #0f0;
+    }
+
+    .color-preview {
+      width: 120px;
+      height: 60px;
+      margin-top: 1em;
+      border: 2px solid #fff;
+      border-radius: 0.5em;
+    }
+
+    .rgb-values {
+      display: flex;
+      gap: 2em;
+      margin-top: 0.5em;
+      font-size: 1em;
+      color: #fffa;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Binary, Hex & RGB Visualizer</h1>
+
+  <h2>Binary Byte Editor (8 bits)</h2>
+  <div class="hex-container" id="binaryContainer"></div>
+  <div class="dec-value" id="binaryDecValue">Decimal: 0</div>
+
+  <h2>Hex Rollover Practice (4 digits)</h2>
+  <div class="hex-container" id="simpleHexContainer"></div>
+  <div class="dec-value" id="simpleDecValue">Decimal: 0</div>
+
+  <h2>Color Hex Editor (RRGGBB)</h2>
+  <div class="hex-container" id="colorHexContainer"></div>
+  <div class="color-preview" id="colorPreview"></div>
+  <div class="dec-value" id="colorHexValue">Hex: #000000</div>
+  <div class="rgb-values" id="rgbValues">Red: 0 | Green: 0 | Blue: 0</div>
+
+  <script>
+    const binaryBits = [0, 0, 0, 0, 0, 0, 0, 0]; // MSB to LSB
+    const simpleHex = [0, 0, 0, 0];
+    const colorHex = [0, 0, 0, 0, 0, 0]; // RRGGBB
+
+    const binaryContainer = document.getElementById('binaryContainer');
+    const simpleContainer = document.getElementById('simpleHexContainer');
+    const colorContainer = document.getElementById('colorHexContainer');
+
+    const binaryDec = document.getElementById('binaryDecValue');
+    const simpleDec = document.getElementById('simpleDecValue');
+    const colorHexText = document.getElementById('colorHexValue');
+    const colorPreview = document.getElementById('colorPreview');
+    const rgbValues = document.getElementById('rgbValues');
+
+    const toHexChar = (val) => val.toString(16).toUpperCase();
+    const toDec = (hexArr) => parseInt(hexArr.map(toHexChar).join(''), 16);
+
+    function renderBinary() {
+      binaryContainer.innerHTML = '';
+
+      binaryBits.forEach((bit, idx) => {
+        const col = document.createElement('div');
+        col.className = 'digit-column';
+
+        const up = document.createElement('div');
+        up.className = 'arrow';
+        up.innerHTML = '▲';
+        up.onclick = () => {
+          binaryBits[idx] = 1;
+          renderBinary();
+        };
+
+        const digit = document.createElement('div');
+        digit.className = 'hex-digit';
+        digit.textContent = bit;
+
+        const down = document.createElement('div');
+        down.className = 'arrow';
+        down.innerHTML = '▼';
+        down.onclick = () => {
+          binaryBits[idx] = 0;
+          renderBinary();
+        };
+
+        col.appendChild(up);
+        col.appendChild(digit);
+        col.appendChild(down);
+        binaryContainer.appendChild(col);
+      });
+
+      const binString = binaryBits.join('');
+      const decimal = parseInt(binString, 2);
+      binaryDec.textContent = `Decimal: ${decimal}`;
+    }
+
+    function renderHexUI(container, hexArray, onUpdate) {
+      container.innerHTML = '';
+      hexArray.forEach((val, idx) => {
+        const col = document.createElement('div');
+        col.className = 'digit-column';
+
+        const up = document.createElement('div');
+        up.className = 'arrow';
+        up.innerHTML = '▲';
+        up.onclick = () => {
+          hexArray[idx] = (hexArray[idx] + 1) % 16;
+          onUpdate();
+        };
+
+        const digit = document.createElement('div');
+        digit.className = 'hex-digit';
+        digit.textContent = toHexChar(val);
+
+        const down = document.createElement('div');
+        down.className = 'arrow';
+        down.innerHTML = '▼';
+        down.onclick = () => {
+          hexArray[idx] = (hexArray[idx] - 1 + 16) % 16;
+          onUpdate();
+        };
+
+        col.appendChild(up);
+        col.appendChild(digit);
+        col.appendChild(down);
+        container.appendChild(col);
+      });
+    }
+
+    function renderSimpleHex() {
+      renderHexUI(simpleContainer, simpleHex, renderSimpleHex);
+      simpleDec.textContent = `Decimal: ${toDec(simpleHex)}`;
+    }
+
+    function renderColorHex() {
+      renderHexUI(colorContainer, colorHex, renderColorHex);
+      const hexStr = colorHex.map(toHexChar).join('');
+      const r = parseInt(hexStr.slice(0, 2), 16);
+      const g = parseInt(hexStr.slice(2, 4), 16);
+      const b = parseInt(hexStr.slice(4, 6), 16);
+
+      colorHexText.textContent = `Hex: #${hexStr}`;
+      colorPreview.style.backgroundColor = `#${hexStr}`;
+      rgbValues.textContent = `Red: ${r} | Green: ${g} | Blue: ${b}`;
+    }
+
+    renderBinary();
+    renderSimpleHex();
+    renderColorHex();
+  </script>
+
+</body>
+</html>
