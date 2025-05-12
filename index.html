@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Doe - Frontend Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            -webkit-print-color-adjust: exact;
+            color-adjust: exact;
+        }
+        .grid {
+            display: grid !important;
+            grid-template-columns: 1fr 2fr !important;
+            gap: 1.5rem !important;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 p-6">
+    <main class="max-w-5xl mx-auto">
+        <!-- Header Section -->
+        <header class="bg-white rounded-2xl shadow-lg overflow-hidden mb-6 group hover:shadow-xl transition-shadow duration-300">
+            <div class="bg-gradient-to-r from-teal-600 to-teal-800 p-8">
+                <div class="text-center text-white">
+                    <h1 class="text-5xl font-bold mb-2">Isaac Fraire</h1>
+                    <p class="text-xl text-blue-100">Frontend Developer</p>
+
+                   <div class="flex flex-col items-center gap-4 mt-6">
+                    <div class="flex flex-wrap justify-center items-center gap-6">
+                        <a href="mailto:john.doe@example.com" class="group">
+                            <span class="block text-blue-100 text-sm">Email</span>
+                            <span class="block text-white hover:text-blue-200 transition-colors">fraireisaac1@gmail.com</span>
+                        </a>
+                        <a href="tel:(123)456-7890" class="group">
+                            <span class="block text-blue-100 text-sm">Phone</span>
+                            <span class="block text-white hover:text-blue-200 transition-colors">(602)527-3056</span>
+                        </a>
+                        <a href="https://github.com" class="group">
+                            <span class="block text-blue-100 text-sm">GitHub</span>
+                            <span class="block text-white hover:text-blue-200 transition-colors">github.com/fraireisaac</span>
+                        </a>
+                        <a href="https://linkedin.com" class="group">
+                            <span class="block text-blue-100 text-sm">LinkedIn</span>
+                            <span class="block text-white hover:text-blue-200 transition-colors">linkedin.com/in/fraireisaac</span>
+                        </a>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- Left Column -->
+            <aside class="lg:col-span-1 space-y-6">
+                <!-- Education Card -->
+                <section class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4 flex items-center">Education</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="font-semibold text-gray-700">West Mec Coding Program</h3>
+                            <p class="text-gray-500 text-sm">Graduation: May 2025</p>
+                            <div class="mt-2 text-gray-600 text-sm">
+                                <p>Program Description:</p>
+                                <p>Attended a 900 hour, 2 year career technical program and learned the latest industry technologies and developed front-end, server-side, and full-stack applications</p>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="font-semibold text-gray-700">Centennial High School</h3>
+                            <p class="text-gray-500 text-sm">Graduation: May 2024</p>
+                            <div class="mt-2 text-gray-600 text-sm">
+                                <p>GPA: 3.9</p>
+                                <p>Relevant Coursework:</p>
+                                <p>Computer Programming and Technology &#8226 AP Computer Science Principles &#8226 Advanced Computer Science &#8226 Daktroniks &#8226 Game Design &#8226 AP Statistics &#8226 Pre Calculus Honors &#8226 AP Calculus 1</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Skills Card -->
+                <section class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4">Technical Skills</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="font-semibold text-gray-700 mb-2">Languages</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-cyan-100 text-blue-800 rounded-full text-xs">HTML5</span>
+                                <span class="px-3 py-1 bg-cyan-100 text-blue-800 rounded-full text-xs">CSS3</span>
+                                <span class="px-3 py-1 bg-cyan-100 text-blue-800 rounded-full text-xs">JavaScript</span>
+                                <span class="px-3 py-1 bg-cyan-100 text-blue-800 rounded-full text-xs">PHP</span>
+                                <span class="px-3 py-1 bg-cyan-100 text-blue-800 rounded-full text-xs">Typescript</span>
+                                <span class="px-3 py-1 bg-cyan-100 text-blue-800 rounded-full text-xs">SQL</span>
+                                <span class="px-3 py-1 bg-cyan-100 text-blue-800 rounded-full text-xs">Markdown</span>
+                                <span class="px-3 py-1 bg-cyan-100 text-blue-800 rounded-full text-xs">JSON</span>
+                                <span class="px-3 py-1 bg-cyan-100 text-blue-800 rounded-full text-xs">Node</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-700 mb-2">Technologies</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs">Windows</span>
+                                <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs">Linux</span>
+                                <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs">Laravel</span>
+                                <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs">React</span>
+                                <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs">Express</span>
+                                <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs">MongoDB</span>
+                                <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs">Bootstrap</span>
+                                <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs">Tailwind</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-700 mb-2">Tools</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-yellow-100 text-green-800 rounded-full text-xs">VSCode</span>
+                                <span class="px-3 py-1 bg-yellow-100 text-green-800 rounded-full text-xs">Vim</span>
+                                <span class="px-3 py-1 bg-yellow-100 text-green-800 rounded-full text-xs">Emmet</span>
+                                <span class="px-3 py-1 bg-yellow-100 text-green-800 rounded-full text-xs">Powershell</span>
+                                <span class="px-3 py-1 bg-yellow-100 text-green-800 rounded-full text-xs">TMUX</span>
+                                <span class="px-3 py-1 bg-yellow-100 text-green-800 rounded-full text-xs">Phaser</span>
+                                <span class="px-3 py-1 bg-yellow-100 text-green-800 rounded-full text-xs">Git</span>
+                                <span class="px-3 py-1 bg-yellow-100 text-green-800 rounded-full text-xs">Github</span>
+                                <span class="px-3 py-1 bg-yellow-100 text-green-800 rounded-full text-xs">Virtual Box</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Awards Card -->
+                <section class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4">Certifricates, Awards</h2>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <span class="text-gray-700">Information Technology Specialist HTML5 Certification</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <span class="text-gray-700">Information Technology Specialist JavaScript Certification</span>
+                        </li>
+                    </ul>
+                </section>
+            </aside>
+
+            <!-- Right Column -->
+            <div class="lg:col-span-2 space-y-6">
+                <!-- Professional Statement and Knowledge and Skills -->
+                <section class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
+                    <h2 class="text-xl font-bold text-gray-800 mb-6">Professional Statement</h2>
+                    <div class="space-y-8">
+                        <div>
+                            <div class="border-l-4 border-blue-500 pl-4">
+                                <p class="text-gray-700 mb-2">Diligent second year coding student and highly trained full-stack web developer who excels at creating fully-function web application using various programming languages and utilities. Seeking the position of a Junior Front End Developer.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <h1 class="text-md font-bold text-gray-800 mb-2">Strengths:</h1>
+                        <p class="text-gray-700 mb-2">Personable &#8226 Communication &#8226 Adaptability &#8226 Team Work &#8226 Punctual &#8226 Perserverance &#8226 Creative Problem Solving &#8226 Data Analysis</p>
+                </section>
+                <!-- Work Experience -->
+                <section class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
+                    <h2 class="text-xl font-bold text-gray-800 mb-6">Volunteerism</h2>
+                    <div class="space-y-8">
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <div>
+                                    <h3 class="font-semibold text-gray-800">West Mec FBLA</h3>
+                                    <p class="text-gray-600">West Mec Central Campus</p>
+                                </div>
+                                <span class="text-sm text-gray-500">August 2024 – May 2025</span>
+                            </div>
+                            <ul class="space-y-2">
+                                <li class="flex items-start gap-2">
+                                    <div class="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+                                    <span class="text-gray-700">Built decorations a custom car design for community Trunk or Treat event to pass out candy and play games with families 2 years in a row.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <div class="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+                                    <span class="text-gray-700">Competently worked Help Desk at multiple West Mec Open Houses. Promoted the high-caliber program, providing detailed information about the technologies we use.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </section>
+                <!-- Projects -->
+                <section class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
+                    <h2 class="text-xl font-bold text-gray-800 mb-6">Featured Technical Projects</h2>
+                    <div class="space-y-8">
+                        <div class="border-l-4 border-blue-500 pl-4">
+                            <h3 class="font-semibold text-gray-800">Laravel Task App</h3>
+                            <p class="text-gray-600 text-sm mb-2">March 2025</p>
+                            <p class="text-gray-700 mb-2">Created a task app for the user to keep track of their virtual to-do lists. Made using Laravel and the MVC file structure, along with using MySQL, php, and tailwind styling. Demonstrates knowledge of and efficiency with database technology and the MVC file structure.</p>
+                            <a href="https://github.com/ifrair729/laravel-task-app" class="inline-flex items-center text-blue-600 hover:text-blue-800">
+                                View Repository
+                            </a>
+                        </div>
+
+                        <div class="border-l-4 border-blue-500 pl-4">
+                            <h3 class="font-semibold text-gray-800">Deelish</h3>
+                            <p class="text-gray-600 text-sm mb-2">November 2024</p>
+                            <p class="text-gray-700 mb-2">Led a group of 4 to create a website for sharing recipes virtually. Made using JavaScript and Express primarilly, saved in a group repository on Github. Demonstrates our proficiency with using json data files, and using CRUD opperations to create and modify data.</p>
+                            <a href="https://github.com/fraireisaac1/Deelish" class="inline-flex items-center text-blue-600 hover:text-blue-800">
+                                View Repository
+                            </a>
+                        </div>
+
+                        <div class="border-l-4 border-blue-500 pl-4">
+                            <h3 class="font-semibold text-gray-800">MECAZON</h3>
+                            <p class="text-gray-600 text-sm mb-2">December 2024</p>
+                            <p class="text-gray-700 mb-2">Created a e-commerce shopping website alongside classmates for West Mec. Cooperated with a team of 4 handled the creation of react components that were used in the project and how they interacted with other aspects, such as the storage of data and how those components were styled.</p>
+                            <a href="https://github.com/EMcNaughton-WestMec/TeamB-WestMEC-Temp" class="inline-flex items-center text-blue-600 hover:text-blue-800">
+                                View Repository
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
